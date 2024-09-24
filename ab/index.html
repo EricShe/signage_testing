@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AB</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/javascript">
+        function changeMode() {
+            // const command = "PlayModeAll"
+            const command = "PlayModeAB"
+            console.log('skipPlayBack()')
+            try {
+                window.android.callAndroid(command);
+            } catch (e) {
+                console.log("sendCommand error, it may not signage device.")
+                console.error(e);
+            }
+        }
+
+        window.onload = changeMode;
+    </script>
+    <style>
+        .main{
+            height: 100vh;
+            text-align: center;
+            margin: auto;
+            color: white;
+            font-size: 30px;
+        }
+        body{
+            background-color: #747bff;
+            height: 100vh;
+        }
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <span>Pure JS AB</span>
+    </div>
+</body>
+</html>
